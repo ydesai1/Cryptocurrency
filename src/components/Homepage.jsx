@@ -8,19 +8,31 @@ import "./homepage.css";
 import { Link } from "react-router-dom";
 import Cryptocurrencies from "./Cryptocurrencies";
 import News from "./News";
+import { tokens } from "../theme";
 
 const Homepage = () => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
   const { data, iseFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
+  console.log(globalStats, "globalStats");
 
-  return (
+  return iseFetching ? (
+    <p>Loading..</p>
+  ) : (
     <>
-      <Typography variant="h5" color="grey" fontWeight="bold">
+      <Typography
+        variant="h2"
+        color={colors.grey[100]}
+        fontWeight="bold"
+        className="heading"
+      >
         Global Crypto Stats
       </Typography>
       <Row gutter={[32, 32]}>
         <Col span={12}>
-          <Typography variant="h5" color="grey" fontSize="22px">
+          <Typography variant="h2" color={colors.grey[100]}>
             Total Cryptocurrencies
           </Typography>
           <Statistic
@@ -29,16 +41,16 @@ const Homepage = () => {
           />
         </Col>
         <Col span={12}>
-          <Typography variant="h5" color="grey" fontSize="22px">
+          <Typography variant="h2" color={colors.grey[100]}>
             Total Exchanges
           </Typography>
           <Statistic
             valueStyle={{ color: "grey" }}
-            value={globalStats?.totalExchanges}
+            value={millify(globalStats?.totalExchanges)}
           />
         </Col>
         <Col span={12}>
-          <Typography variant="h5" color="grey" fontSize="22px">
+          <Typography variant="h2" color={colors.grey[100]}>
             Total Market Cap:
           </Typography>
           <Statistic
@@ -46,8 +58,8 @@ const Homepage = () => {
             value={`$${millify(globalStats?.totalMarketCap)}`}
           />
         </Col>
-        <Col span={12} valueStyle={{ color: "grey" }} fontSize="22px">
-          <Typography variant="h5" color="grey" fontSize="22px">
+        <Col span={12} valueStyle={{ color: "grey" }}>
+          <Typography variant="h2" color={colors.grey[100]}>
             Total 24h Volume
           </Typography>
           <Statistic
@@ -56,7 +68,7 @@ const Homepage = () => {
           />
         </Col>
         <Col span={12}>
-          <Typography variant="h5" color="grey" fontSize="22px">
+          <Typography variant="h2" color={colors.grey[100]}>
             Total Cryptocurrencies
           </Typography>
           <Statistic
@@ -65,7 +77,7 @@ const Homepage = () => {
           />
         </Col>
         <Col span={12}>
-          <Typography variant="h5" color="grey" fontSize="22px">
+          <Typography variant="h2" color={colors.grey[100]}>
             Total Markets
           </Typography>
           <Statistic
@@ -75,19 +87,27 @@ const Homepage = () => {
         </Col>
       </Row>
       <div className="home-heading-container">
-        <Typography variant="h5" color="grey" className="home-Typography">
+        <Typography
+          variant="h2"
+          color={colors.grey[100]}
+          className="home-Typography"
+        >
           Top 10 Cryptos In The World
         </Typography>
-        <Typography variant="h5" color="grey" className="show-more">
+        <Typography variant="h2" color={colors.grey[100]} className="show-more">
           <Link to="/cryptocurrencies">Show more</Link>
         </Typography>
       </div>
       <Cryptocurrencies simplified />
       <div className="home-heading-container">
-        <Typography variant="h5" color="grey" className="home-Typography">
+        <Typography
+          variant="h2"
+          color={colors.grey[100]}
+          className="home-Typography"
+        >
           Latest Crypto News
         </Typography>
-        <Typography variant="h5" color="grey">
+        <Typography variant="h2" color={colors.grey[100]}>
           <Link to="/news">Show more</Link>
         </Typography>
       </div>

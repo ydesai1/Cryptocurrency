@@ -23,6 +23,7 @@ import {
   useGetCryptoHistoryQuery,
 } from "../services/cryptoApi";
 import LineChart from "./LineChart";
+import { tokens } from "../theme";
 // import Loader from './Loader';
 
 const { Title, Text } = Typography;
@@ -30,7 +31,7 @@ const { Option } = Select;
 
 const CryptoDetails = () => {
   const theme = useTheme();
-  // const colors = tokens(theme.palette.mode);
+  const colors = tokens(theme.palette.mode);
   const { coinId } = useParams();
   const [timeperiod, setTimeperiod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
@@ -114,7 +115,7 @@ const CryptoDetails = () => {
       <Col className="coin-heading-container">
         <Typography
           variant="h2"
-          color="grey"
+          color={colors.grey[100]}
           fontWeight="bold"
           sx={{ m: "10px 0 0 0" }}
           className="coin-name"
@@ -146,7 +147,7 @@ const CryptoDetails = () => {
           <Col className="coin-value-statistics-heading">
             <Typography
               variant="h2"
-              color="grey"
+              color={colors.grey[100]}
               fontWeight="bold"
               sx={{ m: "10px 0 0 0" }}
               className="coin-details-heading"
@@ -163,7 +164,7 @@ const CryptoDetails = () => {
               <Col className="coin-stats-name">
                 <Typography
                   variant="h2"
-                  color="grey"
+                  color={colors.grey[100]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
@@ -171,7 +172,7 @@ const CryptoDetails = () => {
                 </Typography>
                 <Typography
                   variant="h2"
-                  color="grey"
+                  color={colors.grey[100]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
@@ -180,7 +181,7 @@ const CryptoDetails = () => {
               </Col>
               <Typography
                 variant="h2"
-                color="grey"
+                color={colors.grey[100]}
                 fontWeight="bold"
                 sx={{ m: "10px 0 0 0" }}
                 className="stats"
@@ -194,7 +195,7 @@ const CryptoDetails = () => {
           <Col className="coin-value-statistics-heading">
             <Typography
               variant="h2"
-              color="grey"
+              color={colors.grey[100]}
               fontWeight="bold"
               sx={{ m: "10px 0 0 0" }}
               className="coin-details-heading"
@@ -211,7 +212,7 @@ const CryptoDetails = () => {
               <Col className="coin-stats-name">
                 <Typography
                   variant="h2"
-                  color="grey"
+                  color={colors.grey[100]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
@@ -219,7 +220,7 @@ const CryptoDetails = () => {
                 </Typography>
                 <Typography
                   variant="h2"
-                  color="grey"
+                  color={colors.grey[100]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
@@ -228,7 +229,7 @@ const CryptoDetails = () => {
               </Col>
               <Typography
                 variant="h2"
-                color="grey"
+                color={colors.grey[100]}
                 fontWeight="bold"
                 sx={{ m: "10px 0 0 0" }}
                 className="stats"

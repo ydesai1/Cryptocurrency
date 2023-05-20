@@ -19,7 +19,6 @@
   width: 300px;
   margin-left: 10px;
   margin-top: 90px;
-  color: black;
   font-size: 1.2rem;
   font-family: sans-serif;
   text-decoration: none;
@@ -30,9 +29,13 @@
   text-align: center;
   grid-area: header;
 }
-
+.search-crypto{
+  margin: 20px auto 30px auto;
+  width: 250px;
+}
 .nav {
   /* background-color: rgb(197, 189, 189); */
+  /* background-color: #adadad; */
   grid-area: nav;
   word-wrap: break-word;
 }
@@ -40,6 +43,7 @@
 .main {
   /* background-color: blanchedalmond; */
   grid-area: content;
+  padding: 20px;
 }
 .coin-detail-container{
   margin: 30px;
@@ -85,7 +89,6 @@
   display: flex;
   justify-content: space-between;
   gap: 50px;
-  color: #0071bd;
 }
 .chart-title{
   color: #0071bd !important;
@@ -103,7 +106,7 @@
 .current-price{
   margin-top: 0px !important;
   font-weight: 900 !important;
-  color: grey;
+  /* color: grey; */
 }
 
 @media (max-width: 768px) {

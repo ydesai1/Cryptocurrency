@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import { tokens } from "../theme";
 
 const Sidebar = () => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
   return (
     <div className="sidebar">
       {/* <li>
@@ -9,28 +13,28 @@ const Sidebar = () => {
         </li> */}
       <div>
         <Link style={{ color: "black", textDecoration: "none" }} to="/">
-          Home
+          <Typography color={colors.grey[100]}>Home</Typography>
         </Link>
       </div>
-      <div>
+      {/* <div>
         <Link
           style={{ color: "black", textDecoration: "none" }}
           to="/cryptocurrencies"
         >
-          Cryptocurrencies
+          <Typography color={colors.grey[100]}>Cryptocurrencies</Typography>
         </Link>
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <Link
           style={{ color: "black", textDecoration: "none" }}
           to="/exchanges"
         >
-          Exchanges
+          <Typography color={colors.grey[100]}>Exchanges</Typography>
         </Link>
-      </div>
+      </div> */}
       <div>
         <Link style={{ color: "black", textDecoration: "none" }} to="/news">
-          News
+          <Typography color={colors.grey[100]}>News</Typography>
         </Link>
       </div>
     </div>
