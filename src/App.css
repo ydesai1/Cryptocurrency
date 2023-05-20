@@ -54,94 +54,30 @@
   align-items: center;
   margin-top: 40px;
 }
-.stats-container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-}
-.stats-container h2{
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin-top: 20px;
-  color: var(--pink);
-}
-.coin-stats{
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border);
-  font-size: 1rem;
-  opacity: 0.9;
-  padding: 20px;
-
-}
-
-.coin-stats-name{
-  display: flex;
-  gap: 10px;
-  font-size: 1rem;
-}
-.coin-value-statistics-heading p{
-  font-size: 1rem;
-  opacity: 0.9;
-}
-.chart-header{
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-}
-.chart-title{
-  color: #0071bd !important;
-}
-.price-container{
-  display: flex !important;
-  gap: 20px !important;
-  align-items: center !important;
-  flex-wrap: wrap !important;
-}
-.price-change{
-  font-weight: 900 !important;
-  margin-top: 0px !important;
-}
-.current-price{
-  margin-top: 0px !important;
-  font-weight: 900 !important;
-  /* color: grey; */
-}
-
-@media (max-width: 768px) {
-  .container {
-    grid-template-areas:
-      "header"
-      "nav"
-      "content";
-
-    grid-template-columns: 1fr;
-    grid-template-rows:
-      auto /* Header */
-      minmax(75px, auto) /* Nav */
-      1fr /* Content */
-      minmax(75px, auto) /* Sidebar */
-      auto; /* Footer */
+@media (max-width: 767px) {
+  .app {
+    display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "content content content"
+   ;
+   grid-template-rows: 1fr 1fr 1fr
   }
-
-}
-@media screen and (max-width: 500px){
-  .coin-links{
-      padding: 0px;
+  .header {
+    /* background-color: aqua; */
+    height: 50px;
+    text-align: center;
+    grid-area: header;
   }
-  .coin-detail-container{
-      margin: 0;
-  }
-}
-@media screen and (max-width:1000px){
-  .stats-container{
-      flex-direction: column;
-  }
-  .coin-desc-link{
-      flex-direction: column;
-  }
-  .stats-container h2{
-      margin-top: 0px;
+  .sidebar {
+    grid-area: nav;
+  word-wrap: break-word;
+  height: 20px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  text-decoration: none;
   }
 }
